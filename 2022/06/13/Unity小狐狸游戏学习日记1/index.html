@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    
+    <title>Unity小狐狸游戏学习日记1 - Hexo</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="Collider2D：获取Collider组件，添加该组件可以进行碰撞检测   LayerMasK：获取ground图层，使该图层为碰撞图层 12345if (rb.velocity.y &lt; 0)	&#x2F;&#x2F;判断Y轴速度（跳跃速度）是否小于0&amp;#123;    anim.SetBool(&quot;jumping&quot;,false);&#x2F;&#x2F;关闭跳跃动画，开启下落动画    anim.SetBo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unity小狐狸游戏学习日记1">
+<meta property="og:url" content="https://acha2333.github.io/2022/06/13/Unity%E5%B0%8F%E7%8B%90%E7%8B%B8%E6%B8%B8%E6%88%8F%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B01/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Collider2D：获取Collider组件，添加该组件可以进行碰撞检测   LayerMasK：获取ground图层，使该图层为碰撞图层 12345if (rb.velocity.y &lt; 0)	&#x2F;&#x2F;判断Y轴速度（跳跃速度）是否小于0&amp;#123;    anim.SetBool(&quot;jumping&quot;,false);&#x2F;&#x2F;关闭跳跃动画，开启下落动画    anim.SetBo">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-06-13T06:22:09.000Z">
+<meta property="article:modified_time" content="2022-06-13T11:22:46.910Z">
+<meta property="article:author" content="acha2333">
+<meta property="article:tag" content="Unity">
+<meta property="article:tag" content="学习日记">
+<meta name="twitter:card" content="summary">
+    
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/justifiedGallery/justifiedGallery.min.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1655119387749">
+    
+    <link rel="stylesheet" href="/css/style.css?v=1655119387749">
+
+    
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body class="mdui-drawer-body-left">
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" style="background-image: url(https://3xiaoxiao3blog-image.oss-cn-hangzhou.aliyuncs.com/image2/background.jpg)"></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="acha2333" class="mdui-btn mdui-btn-icon"><img src="https://3xiaoxiao3blog-image.oss-cn-hangzhou.aliyuncs.com/image2/title.jpg" alt="acha2333"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="acha2333">
+            <img src="https://3xiaoxiao3blog-image.oss-cn-hangzhou.aliyuncs.com/image2/title.jpg" alt="acha2333" alt="acha2333">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>Articles</span>3</div>
+        <div><span>Tags</span>3</div>
+        <div><span>Categories</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+    
+        
+        
+        
+        
+        
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2022 acha2333
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+            <div class="nexmoe-post">
+
+  <article>
+      
+          <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
+              <img data-fancybox="gallery" src="https://3xiaoxiao3blog-image.oss-cn-hangzhou.aliyuncs.com/image2/background.jpg" alt="Unity小狐狸游戏学习日记1" loading="lazy">
+              <h1>Unity小狐狸游戏学习日记1</h1>
+          </div>
+      
+      
+      <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2022年06月13日</a>
+</div>
+      
+    <a><i class="nexmoefont icon-areachart"></i>约318字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>预计需要1分钟</a>
+
+
+      <p>Collider2D：获取Collider组件，添加该组件可以进行碰撞检测  </p>
+<p>LayerMasK：获取ground图层，使该图层为碰撞图层</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (rb.velocity.y &lt; <span class="number">0</span>)	<span class="comment">//判断Y轴速度（跳跃速度）是否小于0</span></span><br><span class="line">&#123;</span><br><span class="line">    anim.SetBool(<span class="string">&quot;jumping&quot;</span>,<span class="literal">false</span>);<span class="comment">//关闭跳跃动画，开启下落动画</span></span><br><span class="line">    anim.SetBool(<span class="string">&quot;falling&quot;</span>, <span class="literal">true</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (coll.IsTouchingLayers(ground))<span class="comment">//掉落过程中碰到了ground（碰撞地面）</span></span><br><span class="line">&#123;</span><br><span class="line">    anim.SetBool(<span class="string">&quot;falling&quot;</span>,<span class="literal">false</span>);<span class="comment">//取消掉落动画，开启待机动画</span></span><br><span class="line">    anim.SetBool(<span class="string">&quot;idle&quot;</span>, <span class="literal">true</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>修复了移动问题</p>
+<p>原因：之前使用的小狐狸碰撞体为方形，而地面碰撞体也为方形，当小狐狸移动时自身方形碰撞体角会与Collider地面图层每个方块发生碰撞，如果没有锁定Z轴则会使人物产生翻滚。</p>
+<p>解决：新加一个Circle Collider 2d，并将其添加到角色下方（BOX Collider不删除），使用2种Collider控制人物碰撞。</p>
+<p>小技巧：在PlayerController中，使用private可以隐藏自己不想看到的组件，需要获取这些组件可以在Start（）函数中使用GetComponent获取</p>
+<p>例如：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> Rigidbody2D rb;<span class="comment">//隐藏Rigidbody2D和Animator</span></span><br><span class="line"><span class="keyword">private</span> Animator anim;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Start</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    rb = GetComponent&lt;Rigidbody2D&gt;();<span class="comment">//在Start函数中获取这两个组件</span></span><br><span class="line">    anim = GetComponent&lt;Animator&gt;();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+  </article>
+
+  
+      
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/Unity/" rel="tag">Unity</a> <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/" rel="tag">学习日记</a>
+    
+</div>
+
+  
+      <div class="nexmoe-post-footer">
+          
+      </div>
+  
+</div>
+            <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-search-space">
+	<div class="search-container">
+		<div class="search-header">
+			<div class="search-input-container">
+				<input
+					class="search-input"
+					type="text"
+					placeholder="Search"
+					oninput="sinput();"
+				/>
+			</div>
+			<a class="search-close" onclick="sclose();">×</a>
+		</div>
+		<div class="search-body"></div>
+	</div>
+</div>
+
+    
+<script src="/lib/mdui_043tiny/mdui.js"></script>
+<script src="/lib/jquery.min.js"></script>
+<script src="/lib/justifiedGallery/jquery.justifiedGallery.min.js"></script>
+<script src="/lib/fancybox/fancybox.umd.js"></script>
+
+
+ 
+
+<script async src="/js/app.js?v=1655119387752"></script>
+
+
+
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+</body>
+
+</html>
