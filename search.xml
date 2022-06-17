@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>Unity小狐狸游戏学习日记2</title>
+      <link href="/2022/06/17/Unity%E5%B0%8F%E7%8B%90%E7%8B%B8%E6%B8%B8%E6%88%8F%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B02/"/>
+      <url>/2022/06/17/Unity%E5%B0%8F%E7%8B%90%E7%8B%B8%E6%B8%B8%E6%88%8F%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B02/</url>
+      
+        <content type="html"><![CDATA[<p>Physics Material 2D:2D物理材质，在collider中添加可以设置其摩擦力</p><p>空中无限跳的问题：修改跳跃部分代码判定条件</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (Input.GetButtonDown(<span class="string">&quot;Jump&quot;</span>) &amp;&amp; coll.IsTouchingLayers(ground))<span class="comment">//输入jump的跳跃键且碰撞体在地面上，才能进行跳跃</span></span><br><span class="line">&#123;</span><br><span class="line">    rb.velocity = <span class="keyword">new</span> Vector2(rb.velocity.x, jumpforce * Time.deltaTime);</span><br><span class="line">   anim.SetBool(<span class="string">&quot;jumping&quot;</span>,<span class="literal">true</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>Unity的UI入门：Unity中所有UI元素（按钮，输入窗口，滑条等）都是基于Canvas（画布），是呈现UI元素的平台。</p><p>调用Unity UI元素：using UnityEngine.UI</p><p>将Cherry的显示数量固定在左上角：选中Cherry和Number的Text，在Rect Transform处，可以调整锁定的边界，可以将其锁定在左上角</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Unity </tag>
+            
+            <tag> 学习日记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Unity小狐狸游戏学习日记1</title>
       <link href="/2022/06/13/Unity%E5%B0%8F%E7%8B%90%E7%8B%B8%E6%B8%B8%E6%88%8F%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B01/"/>
       <url>/2022/06/13/Unity%E5%B0%8F%E7%8B%90%E7%8B%B8%E6%B8%B8%E6%88%8F%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B01/</url>
